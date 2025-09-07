@@ -1,0 +1,309 @@
+{
+  "templates": {
+    "general-safety": {
+      "name": "General Safety Testing",
+      "description": "Comprehensive safety and security testing for LLM applications",
+      "default_tests": [
+        "common-risk-easy",
+        "common-risk-hard",
+        "mlc-ai-safety",
+        "challenging-toxicity-prompts"
+      ],
+      "default_metrics": [
+        "toxicity-classifier",
+        "refusal",
+        "cybersecevalannotator",
+        "lionguardclassifier"
+      ],
+      "recommended_for": [
+        "Production deployment",
+        "Safety certification",
+        "General-purpose chatbots"
+      ]
+    },
+    "bias-fairness": {
+      "name": "Bias and Fairness Evaluation",
+      "description": "Comprehensive bias detection and fairness assessment",
+      "default_tests": [
+        "bbq-lite",
+        "cbbq-lite",
+        "fairness-uciadult",
+        "winobias"
+      ],
+      "default_metrics": [
+        "genderbias_metric",
+        "fairness",
+        "demographic-parity"
+      ],
+      "recommended_for": [
+        "HR applications",
+        "Educational tools",
+        "Healthcare systems",
+        "Financial services"
+      ]
+    },
+    "singapore-local": {
+      "name": "Singapore Context Testing",
+      "description": "Testing for Singapore-specific knowledge and cultural understanding",
+      "default_tests": [
+        "singapore-context",
+        "singapore-pofma-statements",
+        "singapore-safety-questions",
+        "singapore-facts-mcq",
+        "singapore-legal-glossary"
+      ],
+      "default_metrics": [
+        "exactstrmatch",
+        "bertscore",
+        "answerrelevance"
+      ],
+      "recommended_for": [
+        "Singapore government services",
+        "Local business applications",
+        "Educational platforms in Singapore"
+      ]
+    },
+    "medical-domain": {
+      "name": "Medical and Healthcare Testing",
+      "description": "Comprehensive medical knowledge and safety evaluation",
+      "default_tests": [
+        "medical-llm-leaderboard",
+        "medmcqa",
+        "medqa-us",
+        "pubmedqa"
+      ],
+      "default_metrics": [
+        "exactstrmatch",
+        "faithfulness",
+        "contextrecall",
+        "medical-accuracy"
+      ],
+      "recommended_for": [
+        "Medical diagnosis assistants",
+        "Healthcare chatbots",
+        "Medical research tools",
+        "Patient education systems"
+      ]
+    },
+    "security-focused": {
+      "name": "Security and Robustness Testing",
+      "description": "Comprehensive security vulnerability assessment",
+      "default_tests": [
+        "cyberseceval-cookbook-all-languages",
+        "jailbreak-dan",
+        "prompt_injection_jailbreak",
+        "adversarial-attacks"
+      ],
+      "default_metrics": [
+        "cybersecevalannotator",
+        "refusal",
+        "attack-success-rate"
+      ],
+      "attack_modules": [
+        "homoglyph_attack",
+        "textfooler_attack",
+        "malicious_question_generator",
+        "prompt_injection"
+      ],
+      "recommended_for": [
+        "High-security applications",
+        "Financial systems",
+        "Government services",
+        "Critical infrastructure"
+      ]
+    },
+    "multilingual": {
+      "name": "Multilingual Capability Testing",
+      "description": "Testing across multiple languages and cultures",
+      "default_tests": [
+        "tamil-language-cookbook",
+        "chinese-safety-cookbook",
+        "answercarefully-cookbook-all-languages",
+        "mlc-ipv-all-languages"
+      ],
+      "default_metrics": [
+        "bertscore",
+        "answerrelevance",
+        "language-consistency"
+      ],
+      "languages": [
+        "English",
+        "Chinese",
+        "Tamil",
+        "Malay",
+        "Japanese",
+        "Korean",
+        "French"
+      ],
+      "recommended_for": [
+        "Global applications",
+        "Translation services",
+        "Multicultural platforms",
+        "International business tools"
+      ]
+    },
+    "educational": {
+      "name": "Educational Application Testing",
+      "description": "Testing for educational and learning applications",
+      "default_tests": [
+        "mmlu-all",
+        "gsm8k",
+        "truthfulqa-open-ended",
+        "commonsense-morality-easy"
+      ],
+      "default_metrics": [
+        "exactstrmatch",
+        "faithfulness",
+        "educational-appropriateness",
+        "answerrelevance"
+      ],
+      "recommended_for": [
+        "E-learning platforms",
+        "Tutoring systems",
+        "Educational chatbots",
+        "Academic tools"
+      ]
+    },
+    "customer-service": {
+      "name": "Customer Service Bot Testing",
+      "description": "Testing for customer-facing conversational AI",
+      "default_tests": [
+        "common-risk-easy",
+        "real-toxicity-prompts",
+        "coqa-conversational-qna",
+        "mlc-ssh-typical-user"
+      ],
+      "default_metrics": [
+        "answerrelevance",
+        "toxicity-classifier",
+        "customer-satisfaction",
+        "response-helpfulness"
+      ],
+      "recommended_for": [
+        "Customer support chatbots",
+        "Virtual assistants",
+        "Help desk systems",
+        "FAQ bots"
+      ]
+    },
+    "legal-compliance": {
+      "name": "Legal and Compliance Testing",
+      "description": "Testing for legal domain knowledge and compliance",
+      "default_tests": [
+        "sg-legal-glossary",
+        "sg-university-tutorial-questions-legal",
+        "privacy-enronemails",
+        "mlc-prv-en"
+      ],
+      "default_metrics": [
+        "exactstrmatch",
+        "legal-accuracy",
+        "privacy-preservation",
+        "compliance-score"
+      ],
+      "recommended_for": [
+        "Legal advisory tools",
+        "Compliance systems",
+        "Contract analysis",
+        "Legal research assistants"
+      ]
+    },
+    "quick-assessment": {
+      "name": "Quick Safety Assessment",
+      "description": "Rapid testing for basic safety and functionality",
+      "default_tests": [
+        "common-risk-easy",
+        "challenging-toxicity-prompts-variation1"
+      ],
+      "default_metrics": [
+        "toxicity-classifier",
+        "bertscore"
+      ],
+      "recommended_for": [
+        "Rapid prototyping",
+        "Development testing",
+        "Quick safety checks",
+        "Proof of concepts"
+      ]
+    }
+  },
+  "endpoint_presets": {
+    "openai": {
+      "gpt-4": {
+        "type": "openai-connector",
+        "params": {
+          "model": "gpt-4",
+          "temperature": 0.7,
+          "max_tokens": 2000
+        }
+      },
+      "gpt-35-turbo": {
+        "type": "openai-connector",
+        "params": {
+          "model": "gpt-3.5-turbo",
+          "temperature": 0.7,
+          "max_tokens": 2000
+        }
+      }
+    },
+    "anthropic": {
+      "claude-3-opus": {
+        "type": "anthropic-connector",
+        "params": {
+          "model": "claude-3-opus-20240229",
+          "temperature": 0.7,
+          "max_tokens": 2000
+        }
+      },
+      "claude-3-sonnet": {
+        "type": "anthropic-connector",
+        "params": {
+          "model": "claude-3-sonnet-20240229",
+          "temperature": 0.7,
+          "max_tokens": 2000
+        }
+      }
+    },
+    "bedrock": {
+      "claude-3-sonnet": {
+        "type": "amazon-bedrock-connector",
+        "params": {
+          "model_id": "anthropic.claude-3-sonnet-20240229-v1:0",
+          "region": "us-east-1"
+        }
+      },
+      "llama-3-70b": {
+        "type": "amazon-bedrock-connector",
+        "params": {
+          "model_id": "meta.llama3-70b-instruct-v1:0",
+          "region": "us-east-1"
+        }
+      }
+    },
+    "azure": {
+      "gpt-4": {
+        "type": "azure-openai-connector",
+        "params": {
+          "deployment_name": "gpt-4",
+          "api_version": "2024-02-15-preview"
+        }
+      }
+    },
+    "local": {
+      "ollama-llama2": {
+        "type": "ollama-connector",
+        "params": {
+          "model": "llama2",
+          "base_url": "http://localhost:11434"
+        }
+      },
+      "ollama-mixtral": {
+        "type": "ollama-connector",
+        "params": {
+          "model": "mixtral",
+          "base_url": "http://localhost:11434"
+        }
+      }
+    }
+  }
+}
