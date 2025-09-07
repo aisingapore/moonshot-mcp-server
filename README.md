@@ -29,6 +29,7 @@ cd <project-directory>
 git clone https://github.com/aisingapore/moonshot-mcp-server.git
 git clone https://github.com/aisingapore/revised-moonshot.git
 git clone https://github.com/aisingapore/revised-moonshot-data.git
+git clone https://github.com/aisingapore/revised-moonshot-ui.git
 
 # Set up the data directory symlink to revised-moonshot-data
 cd revised-moonshot
